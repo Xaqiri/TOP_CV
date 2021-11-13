@@ -1,0 +1,14 @@
+.form {
+    background-color: darkslateblue;
+    height: 50%;
+    display: flex;
+
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    gap: 1em;
+}
