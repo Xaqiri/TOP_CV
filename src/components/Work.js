@@ -1,36 +1,30 @@
 import React, { Component } from 'react'
 import './Info.css'
-import FinalInfo from './FinalInfo.js'
 
 class Info extends Component {
     constructor(props) {
         super(props)
+        this.onSubmit = this.onSubmit.bind(this)
         this.state = {
             name: "",
             email: "",
             phone: "",
         }
-        this.onSubmit = this.onSubmit.bind(this)
+        this.btn_text = "Submit"
     }
 
     onSubmit() {
-        let form = document.getElementById('info-form')
-        let name_info = document.getElementById('name-info').value
-        let email_info = document.getElementById('email-info').value
-        let phone_info = document.getElementById('phone-info').value
+        let form = document.getElementById('work-form')
+        let btn = document.getElementById("work-btn")
         form.classList.toggle('hidden')
-        this.setState({
-            name: name_info,
-            email: email_info,
-            phone: phone_info,
-        })
+        this.btn_text = "Edit"
     }
 
     render() {
         return (
             <div className="form">
-                <div>General Information</div>
-                <form action="#" id="info-form">
+                <div>Work Experience</div>
+                <form action="#" id="work-form">
                     <div>
                         <span>Name</span>
                         <input type="text" id="name-info"></input>
@@ -44,8 +38,7 @@ class Info extends Component {
                         <input type="text" id="phone-info"></input>
                     </div>
                 </form>
-                <FinalInfo info={this.state}/>
-                <button onClick={this.onSubmit}>Submit</button>
+                <button id="work-btn" onClick={this.onSubmit}>{this.btn_text}</button>
             </div>
         )
     }

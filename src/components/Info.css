@@ -1,14 +1,31 @@
 .form {
     background-color: darkslateblue;
-    height: 50%;
     display: flex;
-
+    flex-direction: column;
+    color: white;
+    margin-bottom: .5em;
+    width: 50%;
 }
 
 .form form {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    height: 100%;
     gap: 1em;
+    margin-top: 1em;
+    height: 100%;
+}
+
+.form div {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    background-color: white;
+    border: .25em solid darkslateblue;
+    width: 50%;
+}
+
+.hidden div {
+    display: none;
 }
