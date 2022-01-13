@@ -10,6 +10,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
     <Info />
+    <Work />
   </React.StrictMode>,
   document.getElementById('root')
 );

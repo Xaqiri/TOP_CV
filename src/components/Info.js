@@ -15,10 +15,12 @@ class Info extends Component {
 
     onSubmit() {
         let form = document.getElementById('info-form')
+        let display = document.getElementById('display-info')
         let name_info = document.getElementById('name-info').value
         let email_info = document.getElementById('email-info').value
         let phone_info = document.getElementById('phone-info').value
         form.classList.toggle('hidden')
+        display.classList.toggle('hidden')
         this.setState({
             name: name_info,
             email: email_info,

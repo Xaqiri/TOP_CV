@@ -1,23 +1,28 @@
 import React, { Component } from 'react'
 import './Info.css'
+import FinalWork from './FinalWork.js'
 
-class Info extends Component {
+class Work extends Component {
     constructor(props) {
         super(props)
-        this.onSubmit = this.onSubmit.bind(this)
         this.state = {
-            name: "",
-            email: "",
-            phone: "",
+            work_name: "",
+            title: "",
         }
-        this.btn_text = "Submit"
+        this.onSubmit = this.onSubmit.bind(this)
     }
 
     onSubmit() {
         let form = document.getElementById('work-form')
-        let btn = document.getElementById("work-btn")
+        let display = document.getElementById('display-work')
+        let company_info = document.getElementById('company-info').value
+        let title_info = document.getElementById('title-info').value
         form.classList.toggle('hidden')
-        this.btn_text = "Edit"
+        display.classList.toggle('hidden')
+        this.setState({
+            work_name: company_info,
+            title: title_info,
+        })
     }
 
     render() {
@@ -26,22 +31,19 @@ class Info extends Component {
                 <div>Work Experience</div>
                 <form action="#" id="work-form">
                     <div>
-                        <span>Name</span>
-                        <input type="text" id="name-info"></input>
+                        <span>Company Name</span>
+                        <input type="text" id="company-info"></input>
                     </div>
                     <div>
-                        <span>Email</span>
-                        <input type="text" id="email-info"></input>
-                    </div>
-                    <div>
-                        <span>Phone Number</span>
-                        <input type="text" id="phone-info"></input>
+                        <span>Title</span>
+                        <input type="text" id="title-info"></input>
                     </div>
                 </form>
-                <button id="work-btn" onClick={this.onSubmit}>{this.btn_text}</button>
+                <FinalWork info={this.state}/>
+                <button onClick={this.onSubmit}>Submit</button>
             </div>
         )
     }
 }
 
-export default Info
+export default Work
